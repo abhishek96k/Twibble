@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { BiHomeCircle, BiUser } from "react-icons/bi";
 import { TbSearch } from "react-icons/tb";
 import { CgTwitter } from "react-icons/cg";
 import { BsEnvelope, BsBookmark, BsBell, BsTwitter } from "react-icons/bs";
 import { CiCircleMore } from "react-icons/ci";
 import FeedCard from "@/components/FeedCard";
+import GoogleLoginComponent from "@/components/FeedCard/GoogleOauth";
 
 interface TwitterSidebarButtons {
   title: string;
@@ -78,7 +79,12 @@ export default function Home() {
           <FeedCard />
           <FeedCard />
         </div>
-        <div className="col-span-3"></div>
+        <div className="col-span-3 p-5">
+          <div className="p-5 bg-slate-700 rounded-lg">
+            <h1 className="my-2 text-2xl">New to Twibble</h1>
+            <GoogleLoginComponent />
+          </div>
+        </div>
       </div>
     </div>
   );
